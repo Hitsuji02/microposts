@@ -10,11 +10,12 @@
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
-    <h3>followers (<%= @users.count %>)</h3>
+    <h3>followers (<%= @user.follower_users.count %>)</h3>
     <ul>
       <% @users.each do |user| %>
         <li><%= link_to user.name, user %></li>
       <% end %>
     </ul>
+    <%= paginate @users %>
   </div>
 </div>
